@@ -3,3 +3,11 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+user:
+    path: /utilisateur/{username}
+    controller: App\Controller\UserController::show
+
+user_controller:
+    resource: ../src/Controller/UserController.php
+    type: annotation
