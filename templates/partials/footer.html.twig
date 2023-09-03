@@ -1,4 +1,5 @@
- <footer>
+{% set options = option_service.findAll %} 
+<footer>
   <!-- Footer main -->
   <section class="ft-main">
     <div class="ft-main-item">
@@ -50,7 +51,7 @@
   <!-- Footer legal -->
   <section class="ft-legal">
     <ul class="ft-legal-list">
-      <li>&copy; 2022 Copyright Wambiekele Kiyeko Tallia-Anne</li>
+      <li>  {{ 'now' | date('Y') }} {{ options['blog_copyright'] }}</li>
     </ul>
   </section>
 </footer>

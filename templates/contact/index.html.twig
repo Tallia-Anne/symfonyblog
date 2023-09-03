@@ -2,13 +2,32 @@
 
 {% block title %}Page de contact{% endblock %}
 
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/contact/contact.style.css') }}">
+{% endblock %}
+
 {% block body %}
 
-<h1>Contactez-nous</h1>
 
+    <main>
+        <section class="sectioncontact">
+           <div class="contact-image">
+            <img src="../img/a.jpg" alt="img_contact">
+            </div> 
 
-<div>
-        {{ form(formulaire) }}
-    </div>
+            <div class="contactform">
+            <div class="contact-title"> <h1>Contact</h1> </div>
+            
+             {{ form(formulaire) }}
+
+            
+           
+            </div>
+        </section>
+        
+
+    </main>
+  
 
 {% endblock %}

@@ -34,6 +34,7 @@ class ContactController extends AbstractController
             ->text($content);
 
      $mailer->send($email);
+        
 
     }
         

@@ -1,0 +1,19 @@
+ {% block stylesheets %}
+
+
+{% endblock %}
+
+ 
+      <div class="containerblog">
+        <p class="featured-text">  Recent post</p>
+        <h2 class="title-blog animated animatedFadeInUp fadeInUp ">Sur le Blog</h2>
+ {% for article in articles %}
+    {% include 'article/item.html.twig' with {articles}%}
+{% endfor %}
+<div class="bottom-cardblog">
+              <a href="#" class="btn-sav">
+               Sur le blog
+              </a>
+            </div>
+      </div>
+    

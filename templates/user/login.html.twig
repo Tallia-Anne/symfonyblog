@@ -2,11 +2,23 @@
 
 {% block title %}Se connecter{% endblock %}
 
-{% block body %}
-    <div class="container w-25">
-        <h1>Se connecter</h1>
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/login/login.css') }}">
+{% endblock %}
 
-        <form method="post">
+{% block body %}
+   
+    <main>
+        <section class="sectionlogin">
+           <div class="login-image">
+            <img src="../img/formlogin.jpg" alt="img_login">
+            </div> 
+
+            <div class="loginform">
+        <h1>Se connecter</h1>
+        
+        <form method="post" class= 'd-flex flex-column'>
          {% if error %}
             <div class="alert alert-danger mt-4" role="alert">
                 <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -19,14 +31,16 @@
             <div class="mb-3">
                 <label for="password">Mot de passe</label>
                 <input type="password" class="form-control" id="password" required="required" name="_password"/>
-                <a href='{{path('app_forgot_password_request')}}' >Mot de passe oublié</a>
+                <a href='{{path('app_forgot_password_request')}}' class='text-dark'  >Mot de passe oublié</a>
             </div>
 
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-            <button type="submit" class="btn btn-primary">Se connecter</button>
+            <button type="submit" class="btn btn-dark">Se connecter</button>
         </form>
+     </div>
+        </section>
+        
 
-       
-    </div>
+    </main>
 {% endblock %}

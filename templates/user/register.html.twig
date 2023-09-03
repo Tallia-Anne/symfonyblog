@@ -1,9 +1,21 @@
 {% extends 'base.html.twig' %}
 
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/register/register.css') }}">
+{% endblock %}
+
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <div class='container w-25'>
+   <main>
+        <section class="sectionregister">
+           <div class="register-image">
+            <img src="../img/register.jpg" alt="img_register">
+            </div> 
+
+            <div class="registerform d-flex flex-column">
         <h1>S'inscrire</h1>
         {{ form_errors(registrationForm) }}
 
@@ -17,7 +29,11 @@
 
            
 
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-dark">Register</button>
         {{ form_end(registrationForm) }}
-    </div>
+ </div>
+        </section>
+        
+
+    </main>
 {% endblock %}

@@ -1,11 +1,16 @@
-{% for article in articles %}
+ {% block stylesheets %}
+
+
+{% endblock %}
+
+
+   <section class="featured-blox">
+                <section class="container-blog">
+                 <section class="cards-blog">
+{# boucler les articles #}
+ {% for article in articles %}
     {% include 'article/item.html.twig' with {articles}%}
 {% endfor %}
-
-<div class='container'>
-<div class='row'>
-<div class='d-flex align-items-center justify-content-center'>
-   
-</div>
-</div>
-</div>
+ </section>
+            </section>
+</section>

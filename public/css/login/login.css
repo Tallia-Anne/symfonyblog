@@ -1,0 +1,82 @@
+
+.sectionlogin {
+display: grid;
+grid-template-columns: 1fr 1fr;
+height: 745px;
+width: 100%;
+}
+
+.sectionlogin .login-image img {
+height: 745px;
+width: 100%;
+}
+.login-title {
+text-align: center;
+padding-bottom: 54px;
+} 
+.loginform {
+display: flex;
+flex-direction: column;
+padding: 22px;
+justify-content: center;
+align-content: center;
+margin: 63px;
+
+}
+
+.form-login {
+margin-left: 120px;
+}
+
+.formlogin {
+padding-bottom: 42px;
+width: 100px;
+
+}
+
+.formcon {
+    width: 431px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+
+.form-login  input[type="email"], input[type="user"] {
+     width: 431px;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+
+.btn_login {
+    text-decoration: none;
+    color: #f96f88;
+    border: 1px solid #f96f88;
+    padding: 12px 12px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn_login {
+        text-decoration: none;
+        color: #fff;
+        background-color: #f96f88;
+    border: 1px solid #f96f88;
+    padding: 12px 12px;
+}
+
+.formcon:focus {
+border: none;
+} 
+
+
+@media (max-width: 768px) {
+.sectionlogin {
+display: grid;
+grid-template-columns: 1fr;
+height: 1245px;
+width: 100%;
+}
+
+
+}

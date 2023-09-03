@@ -49,9 +49,11 @@ class HomeController extends AbstractController
 
             $siteTitle = new Option(WelcomeModel::SITE_TITLE_LABEL, WelcomeModel::SITE_TITLE_NAME, $data->getSiteTitle(), TextType::class);
             $siteInstalled = new Option(WelcomeModel::SITE_INSTALLED_LABEL, WelcomeModel::SITE_INSTALLED_NAME, true, '');
-
+            // nouveau utilisateur et recuperer l'username
             $user = new User($data->getUsername());
+            // email de l'utilisateur
              $user->setEmail($data->getEmail());
+            //il aura un role admin 
             $user->setRoles(['ROLE_ADMIN']);
             $user->setPassword($passwordHasher->hashPassword($user, $data->getPassword()));
 

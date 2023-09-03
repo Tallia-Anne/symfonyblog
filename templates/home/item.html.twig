@@ -1,0 +1,11 @@
+{% set article_show = path('article_show', { 'slug':article.slug })  %}
+<div class="cardblog">
+            <div class="top-card">
+                <img src="/uploads/{{ article.featuredImage.filename }}" alt="{{ article.featuredImage.filename }}">
+            </div>
+            <div class="bottom-cardblog">
+                 <div class="top-btn">{{article.title}}</div> 
+                <h3 class="text-card">{{article.featuredText ?: article.content|striptags|slice(0,130) ~ '...' }}</h3>
+                <a href="{{ article.show }}" class="btn-sav">En savoir plus</a>
+            </div>
+        </div>

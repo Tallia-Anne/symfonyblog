@@ -2,16 +2,141 @@
 
 {% block title %}{{article.title}}{% endblock %}
 
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/postdetails/postdetail.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+{% endblock %}
+
 {% block body %}
 
 
+       <div class="scroll-line"></div>
+
+
+      {# <!--------------------------- Début MAIN ---------------------------------------> #}
+        <main >
+
+        <section class="post-header">
+
+            <div class="header-content post-container ">
+                <a href="{{ path('app_blog') }}" class="back-home"> <i class="fa-solid fa-arrow-left-long"></i> Back</a>
+                <h1 class="header-title">{{article.title}}</h1>
+
+                <img src="/uploads/{{article.featuredImage.filename}}" alt="{{article.featuredImage}}" class="header-img">
+            </div>
+
+
+        </section>
+
+
+        <section class="post-content post-container">
+<div class="parti-social">
+<div class="position">
+<ul>
+    <h4 class="sociaux"> <i class="fa-solid fa-share-nodes"></i> Share</h4>
+    <li><a href="#"><i class="fa-brands fa-facebook-f icon"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram icon icon-instagram "></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-twitter icon"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-dribbble icon"></i></a></li>
+          <li><a href="https://www.behance.net/erinawambiekele"><i class="fa-brands fa-behance icon"></i></a></li>
+</ul>
+</div>
+</div>
+<div class="parti-texte">
+        <div class="text-pun">
+            
+            <p class="post-text"> {{article.content|raw}} </p>
+           
+</div>
+            <section class="sectiondeux" class="grid">
+        <div class="parallaxe1"></div>
+        </section>
+
+</div>
+    </section>
+        {# <!--------  section_card   -----------> #}
+         <div class="featured">
+                <h4>Les postes récentes:</h4>
+      <div class="container-blog">
+        
+
+        <div class="cards">
+          <div class="card">
+            <div class="top-card">
+              <img
+                src="../img/téléchargement.png"
+                alt=""
+              />
+            </div>
+            <div class="bottom-card">
+              <div class="top-btn">Categorie
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, voluptates.</p>
+                 <a href="#" class="btn-sav">
+               En savoir plus
+              </a>
+            </div>
+              
+            </div>
+          </div>
+
+         <div class="card">
+            <div class="top-card">
+              <img
+                src="../img/Mdph.png"
+                alt=""
+              />
+            </div>
+            <div class="bottom-card">
+              <div class="top-btn">MDPH
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, voluptates.</p>
+                 <a href="#" class="btn-sav">
+               En savoir plus
+              </a>
+            </div>
+              
+            </div>
+          </div>
+
+         <div class="card">
+            <div class="top-card">
+              <img
+                src="../img/image56.jpg"
+                alt=""
+              />
+            </div>
+            <div class="bottom-card">
+              <div class="top-btn">Categorie
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, voluptates.</p>
+                 <a href="#" class="btn-sav">
+               En savoir plus
+              </a>
+            </div>
+              
+            </div>
+          </div>
+
+
+          
+
+         
+
+         
+          
+        </div>
+                 
+      </div>
+    </div>
+   
+
+
+        </section>
+
+     {# commentaire #}
     <div class='container'>
-
-        <h1>{{article.title}}</h1>
-        <hr>
-        {# raw pour retirer le html #}
-        {{article.content|raw}}
-
         <h2 class='comment-title mt-5' >
         <span class='comment-count' >{{article.comments|length }} commentaire(s)</span>
         </h2>
@@ -32,11 +157,17 @@
         {% endfor %}
         <div class='d-flex align-items-center justify-content-center'>
     {# {{ knp_pagination_render(comments)}} #}
+    {# commentaire #}
 </div>
 
         </div>
+</div>
+   
+        </main>
+        {# <!--------------------------------- Fin MAIN ---------------------------------------> #}
 
-    </div>
+
+       
 
 
 {% endblock %}

@@ -1,25 +1,23 @@
 {% set article_show = path('article_show', { 'slug':article.slug })  %}
-<article class='mb-5'>
 
-<div class='row'>
-<div class="col-md-{{leftCol ?? 5}}">
-{% if article.featuredImage%}
 
-<a href="{{article_show }}">
-    <img src="/uploads/{{article.featuredImage.filename}}"  alt="{{article.featuredImage.filename}}"  loading='lazy' width="250" height="205" >
+
+                        <div class="carditem">
+                            <div class="top-carditem">
+                        {% if article.featuredImage%}
+                              <a href="{{article_show }}">
+    <img src="/uploads/{{article.featuredImage.filename}}"  alt="{{article.featuredImage.filename}}"  loading='lazy' width="105" height="105" >
 </a>
-
 {%endif%}
-</div>
-        <div class="col-md-{{rightCol ?? 7}}">
+                            </div>
+                            <div class="bottom-carditem">
+                                <div class="top-btn">{{article.title}}
+                                    <p> {{article.featuredText ?: article.content|striptags|slice(0,130) ~ '...' }}</p>
+                                    <a href="{{article_show }}" class="btn-sav">
+                                        En savoir plus
+                                    </a>
+                                </div>
 
-            <h2>
-                <a class="text-decoration-none" href="{{article_show }}">{{article.title}}</a>
-            </h2>
-        <p>
-            {{article.createdAt|date('d M Y')}}
-        <p>
-        {{article.featuredText ?: article.content|striptags|slice(0,130) ~ '...' }}
-        </div>
+                </div>
+
 </div>
-</article>

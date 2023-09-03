@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/blog/blog.style.css') }}">
+{% endblock %}
+
+{% block body %}
+  {{ include('article/hero.html.twig') }}
+  <section class="blog">
+    <section class='article-list'>
+      {% include 'article/list.html.twig' with {articles: articles} %}
+    </section>
+    <section class='right'>
+      {{ include('widget/about.html.twig') }}
+      {{ include('widget/categories.html.twig') }}
+      {{ include('widget/photo.html.twig') }}
+    </section>
+  </section>
+{% endblock %}
