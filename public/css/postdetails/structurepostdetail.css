@@ -57,7 +57,8 @@ padding-top: 32px;
 .post-content {
 display: grid;
 grid-template-columns: 1fr 9fr;
-grid-gap: 20px;
+grid-gap: 29px;
+padding-top: 107px;
 }
 
 
