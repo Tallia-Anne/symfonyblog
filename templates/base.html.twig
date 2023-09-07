@@ -55,16 +55,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav  ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ path('a_propos') }}">A propos</a>
+                        <a class="nav-link text-dark text-decoration-none" href="{{ path('a_propos') }}">A propos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  text-dark" href="{{ path('app_apprentissage') }}">Trouble Apprentissage</a>
+                        <a class="nav-link  text-dark text-decoration-none" href="{{ path('app_apprentissage') }}">Trouble Apprentissage</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  text-dark" href="{{ path('app_galerie') }}">Galerie</a>
+                        <a class="nav-link  text-dark text-decoration-none" href="{{ path('app_galerie') }}">Galerie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  text-dark" href="{{ path('app_blog') }}">Blog</a>
+                        <a class="nav-link  text-dark text-decoration-none" href="{{ path('app_blog') }}">Blog</a>
                     </li>
                     {% for menu in menus %}
                         {% if menu.subMenus.count > 0 %}
@@ -74,24 +74,24 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ menu.id }}">
                                     {% for subMenu in menu.subMenus %}
-                                        <li><a class="dropdown-item" href="{{ subMenu|menuLink }}">{{ subMenu.name }}</a></li>
+                                        <li><a class="dropdown-item text-decoration-none" href="{{ subMenu|menuLink }}">{{ subMenu.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </li>
                         {% else %}
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="{{ menu|menuLink }}">{{ menu.name }}</a>
+                                <a class="nav-link text-dark text-decoration-none" href="{{ menu|menuLink }}">{{ menu.name }}</a>
                             </li>
                         {% endif %}
                     {% endfor %}
                     {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
                         {% if '1' == options['users_can_register'] %}
                             <li class="nav-item">
-                                <a class="nav-link  text-dark" href="{{ path('app_register') }}">S'inscrire</a>
+                                <a class="nav-link  text-dark text-decoration-none" href="{{ path('app_register') }}">S'inscrire</a>
                             </li>
                         {% endif %}
                         <li class="nav-item">
-                            <a class="nav-link  text-dark" href="{{ path('app_login') }}">Se connecter</a>
+                            <a class="nav-link  text-dark text-decoration-none" href="{{ path('app_login') }}">Se connecter</a>
                         </li>
                     {% else %}
                         <li class="nav-item dropdown">
@@ -99,8 +99,8 @@
                                 {{ app.user.username | capitalize }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
-                                <li><a class="dropdown-item  text-dark " href="{{ path('app_profile', {username: app.user.username}) }}">Mon profil</a></li>
-                                <li><a class="dropdown-item  text-dark " href="{{ path('app_logout') }}">Déconnexion</a></li>
+                                <li><a class="dropdown-item  text-dark text-decoration-none " href="{{ path('app_profile', {username: app.user.username}) }}">Mon profil</a></li>
+                                <li><a class="dropdown-item  text-dark text-decoration-none " href="{{ path('app_logout') }}">Déconnexion</a></li>
                             </ul>
                         </li>
                     {% endif %}

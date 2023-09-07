@@ -1,8 +1,8 @@
 {% set username = app.user.username %}
 
-<div class="comment" id="{{ comment.id }}">
+<div class="comment " id="{{ comment.id }}">
     <div class="card mt-4">
-        <div class="comment-content">
+        <div class="comment-content container">
             <h5 class="card-title">
                 <a class="text-decoration-none" href="{{ path('user', { 'username': username }) }}">
                     <span class="comment-author">{{ username }}</span>

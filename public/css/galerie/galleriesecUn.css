@@ -7,31 +7,43 @@ padding: 112px 112px;
 
 .sectionUn .liens-parents {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: row;
 
 }
 
 .sec {
-  padding: 30px 30px;
+ padding: 30px 32px;
+    height: 30vh;
+    width: 313px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 
+.sec a {
+text-decoration: none;
+color: black;
+font-size: 18px;
+font-weight: 600;
 }
 
 .lien-1 {
-
-
     border-right: 2px solid black;
     height: 178px;
-
-
+    width: 313px;
+   
 }
 
 .lien-3 {
 
-
     border-left: 2px solid black;
     height: 178px;
-
+    width: 313px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 
 }

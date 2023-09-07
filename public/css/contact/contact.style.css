@@ -25,7 +25,9 @@ margin: 63px;
 }
 
 .form-contact {
-margin-left: 120px;
+ width: 431px;
+    border: none;
+    border-bottom: 2px solid black;
 }
 
 .formcontact {
@@ -35,35 +37,32 @@ width: 100px;
 }
 
 .formcon {
+    border-radius: 1px;
     width: 431px;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
-
-.form-contact  input[type="email"], input[type="user"] {
-     width: 431px;
-    border: none;
-    border-bottom: 2px solid black;
-}
 
 
 .btn_contact {
-    text-decoration: none;
-    color: #f96f88;
-    border: 1px solid #f96f88;
+   text-decoration: none;
+    color: #fff;
+    background-color: #000000;
+    border: 1px solid #000000;
     padding: 12px 12px;
-    width: 80%;
-    margin: 0 auto;
+    width: 73%;
+    margin: 10px 66px;
 }
 
-.btn_contact {
+.btn_contact:hover {
         text-decoration: none;
-        color: #fff;
-        background-color: #f96f88;
-    border: 1px solid #f96f88;
-    padding: 12px 12px;
+        color: #000000;
+        background-color: #fdfdfd;
+    border: 1px solid #000000;
+   
 }
+
 
 .formcon:focus {
 border: none;
